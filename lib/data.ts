@@ -49,7 +49,7 @@ export const projects: Project[] = [
     tags: ["Python", "crewAI", "Flask", "Claude API", "SSE"],
     year: 2025,
     hasDetail: true,
-    link: "http://localhost:7070",
+    link: "https://web-production-97ccb.up.railway.app",
   },
   {
     slug: "targetmind-ai",
