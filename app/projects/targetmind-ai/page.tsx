@@ -75,9 +75,14 @@ export default function TargetMindPage() {
         >
           ← Projects
         </Link>
-        <span className="font-mono text-xs text-[var(--muted)] border border-[var(--border)] px-3 py-1 rounded">
-          Local · Python
-        </span>
+        <a
+          href="https://targetmind-ai-production.up.railway.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-mono text-xs tracking-[.1em] uppercase px-4 py-2 border border-[var(--foreground)] text-[var(--foreground)] rounded hover:bg-[var(--foreground)] hover:text-[var(--background)] transition-colors"
+        >
+          Open Project →
+        </a>
       </div>
 
       {/* Header */}

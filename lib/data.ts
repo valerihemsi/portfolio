@@ -59,6 +59,7 @@ export const projects: Project[] = [
     tags: ["Python", "pandas", "Flask", "SSE", "Bias Detection", "Self-Aware Agents"],
     year: 2025,
     hasDetail: true,
+    link: "https://targetmind-ai-production.up.railway.app",
   },
   {
     slug: "websites",
