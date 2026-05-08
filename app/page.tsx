@@ -96,68 +96,73 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="flex-1 flex flex-col gap-12">
+          <div className="flex-1 flex gap-10 items-start">
 
-            {/* Profile photo */}
-            <div className="flex justify-end">
-              <div className="w-36 h-44 sm:w-44 sm:h-56 rounded-xl overflow-hidden border border-[var(--border)] shrink-0">
+            {/* Left: Education + Skills */}
+            <div className="flex-1 flex flex-col gap-12">
+
+              {/* Education */}
+              <div>
+                <p className="font-mono text-[10px] tracking-[.2em] uppercase text-[var(--muted)] mb-6">
+                  Education
+                </p>
+                <div className="flex flex-col gap-5">
+                  <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
+                    <span className="font-mono text-xs text-[var(--muted)] shrink-0 sm:w-24">2021 – 2024</span>
+                    <div>
+                      <p className="text-sm font-medium">Istituto Marangoni Milano</p>
+                      <p className="text-xs text-[var(--muted)] mt-0.5">Interior Design, Bachelor of Arts — Milan, Italy</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
+                    <span className="font-mono text-xs text-[var(--muted)] shrink-0 sm:w-24">Short term</span>
+                    <div>
+                      <p className="text-sm font-medium">Brandeis University</p>
+                      <p className="text-xs text-[var(--muted)] mt-0.5">Short Term Art Program, Visual Arts — Boston, United States</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
+                    <span className="font-mono text-xs text-[var(--muted)] shrink-0 sm:w-24">2013 – 2018</span>
+                    <div>
+                      <p className="text-sm font-medium">American Collegiate Institute</p>
+                      <p className="text-xs text-[var(--muted)] mt-0.5">İzmir, Turkey</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Technical Skills */}
+              <div>
+                <p className="font-mono text-[10px] tracking-[.2em] uppercase text-[var(--muted)] mb-6">
+                  Technical Skills
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    "JavaScript", "HTML", "CSS",
+                    "AutoCAD", "3Ds Max",
+                    "InDesign", "Photoshop",
+                    "Procreate", "Canva",
+                  ].map((skill) => (
+                    <span
+                      key={skill}
+                      className="font-mono text-[10px] tracking-wider uppercase px-3 py-1.5 border border-[var(--border)] text-[var(--muted)] rounded"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+
+            {/* Right: Photo */}
+            <div className="hidden sm:block shrink-0">
+              <div className="w-40 h-52 rounded-xl overflow-hidden border border-[var(--border)]">
                 <img
                   src="/images/valeri-hemsi.jpeg"
                   alt="Valeri Hemsi"
                   className="w-full h-full object-cover object-top"
                 />
-              </div>
-            </div>
-
-            {/* Education */}
-            <div>
-              <p className="font-mono text-[10px] tracking-[.2em] uppercase text-[var(--muted)] mb-6">
-                Education
-              </p>
-              <div className="flex flex-col gap-5">
-                <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
-                  <span className="font-mono text-xs text-[var(--muted)] shrink-0 sm:w-24">2021 – 2024</span>
-                  <div>
-                    <p className="text-sm font-medium">Istituto Marangoni Milano</p>
-                    <p className="text-xs text-[var(--muted)] mt-0.5">Interior Design, Bachelor of Arts — Milan, Italy</p>
-                  </div>
-                </div>
-                <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
-                  <span className="font-mono text-xs text-[var(--muted)] shrink-0 sm:w-24">Short term</span>
-                  <div>
-                    <p className="text-sm font-medium">Brandeis University</p>
-                    <p className="text-xs text-[var(--muted)] mt-0.5">Short Term Art Program, Visual Arts — Boston, United States</p>
-                  </div>
-                </div>
-                <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
-                  <span className="font-mono text-xs text-[var(--muted)] shrink-0 sm:w-24">2013 – 2018</span>
-                  <div>
-                    <p className="text-sm font-medium">American Collegiate Institute</p>
-                    <p className="text-xs text-[var(--muted)] mt-0.5">İzmir, Turkey</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Technical Skills */}
-            <div>
-              <p className="font-mono text-[10px] tracking-[.2em] uppercase text-[var(--muted)] mb-6">
-                Technical Skills
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {[
-                  "JavaScript", "HTML", "CSS",
-                  "AutoCAD", "3Ds Max",
-                  "InDesign", "Photoshop",
-                  "Procreate", "Canva",
-                ].map((skill) => (
-                  <span
-                    key={skill}
-                    className="font-mono text-[10px] tracking-wider uppercase px-3 py-1.5 border border-[var(--border)] text-[var(--muted)] rounded"
-                  >
-                    {skill}
-                  </span>
-                ))}
               </div>
             </div>
 
