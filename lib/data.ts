@@ -283,6 +283,14 @@ export const drawings: Drawing[] = [
     src: "/drawings/kolaj-5.png",
     medium: "Photomontage",
   },
+  {
+    slug: "oneness",
+    title: "Oneness",
+    description: "A cosmic tree rises between night and day, woven through with chakra, symbol, and celestial fire — the self dissolving at last into everything it was never separate from.",
+    year: 2024,
+    src: "/drawings/oneness.jpg",
+    medium: "Digital illustration",
+  },
 ];
 
 export const posts: Post[] = [
