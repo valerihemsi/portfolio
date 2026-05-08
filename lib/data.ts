@@ -174,10 +174,10 @@ export const drawings: Drawing[] = [
   {
     slug: "primate",
     title: "Primate",
-    description: "A chimpanzee portrait painted in deep blues and burgundy — acrylic poured and layered until the face emerges from abstraction.",
+    description: "Two works made separately, brought together digitally — a graphite portrait of a primate drawn by hand, layered over an acrylic-painted background. Pencil line and poured paint, unified into a single composition.",
     year: 2023,
     src: "/drawings/primate.jpg",
-    medium: "Acrylic on canvas",
+    medium: "Graphite & acrylic, digital composite",
   },
   {
     slug: "between-worlds",
@@ -225,7 +225,7 @@ export const drawings: Drawing[] = [
     description: "Gold spirals curl through a dark field of blue and bronze — a digital painting drawn from the geometry of shells and galaxies.",
     year: 2023,
     src: "/drawings/nautilus.png",
-    medium: "Digital painting",
+    medium: "Acrylic painting on canvas",
   },
   {
     slug: "kolaj-2",
