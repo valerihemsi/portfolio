@@ -1,4 +1,5 @@
 import { projects } from "@/lib/data";
+import Link from "next/link";
 
 export default function ProjectsPage() {
   return (
@@ -9,17 +10,18 @@ export default function ProjectsPage() {
         <h1 className="text-4xl sm:text-5xl font-light tracking-tight">Projects</h1>
       </header>
 
-      <div className="flex flex-col gap-px border-t border-[var(--border)]">
+      <div className="flex flex-col border-t border-[var(--border)]">
         {projects.map((p) => (
-          <article
-            key={p.slug}
-            className="group py-8 border-b border-[var(--border)] flex flex-col sm:flex-row sm:items-start gap-6"
-          >
-            <span className="font-mono text-xs text-[var(--muted)] pt-1 w-12 shrink-0">{p.year}</span>
+          <article key={p.slug} className="group py-8 border-b border-[var(--border)] flex flex-col sm:flex-row sm:items-start gap-6">
+            <span className="font-mono text-xs text-[var(--muted)] pt-1 w-12 shrink-0">
+              {p.year}
+            </span>
 
             <div className="flex-1">
               <h2 className="text-lg font-medium mb-2">{p.title}</h2>
-              <p className="text-[var(--muted)] text-sm leading-relaxed mb-4">{p.description}</p>
+              <p className="text-[var(--muted)] text-sm leading-relaxed mb-4">
+                {p.description}
+              </p>
               <div className="flex flex-wrap gap-2">
                 {p.tags.map((t) => (
                   <span
@@ -32,7 +34,15 @@ export default function ProjectsPage() {
               </div>
             </div>
 
-            <div className="flex gap-4 sm:flex-col sm:items-end shrink-0">
+            <div className="flex items-center gap-3 sm:flex-col sm:items-end shrink-0 sm:pt-1">
+              {p.hasDetail && (
+                <Link
+                  href={`/projects/${p.slug}`}
+                  className="font-mono text-xs text-[var(--muted)] hover:text-[var(--foreground)] transition-colors"
+                >
+                  Details →
+                </Link>
+              )}
               {p.github && (
                 <a
                   href={p.github}
@@ -48,9 +58,9 @@ export default function ProjectsPage() {
                   href={p.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-mono text-xs text-[var(--muted)] hover:text-[var(--foreground)] transition-colors"
+                  className="font-mono text-xs text-[var(--foreground)] border border-[var(--foreground)]/20 px-3 py-1 rounded hover:border-[var(--foreground)]/60 transition-colors"
                 >
-                  Live →
+                  Open →
                 </a>
               )}
             </div>

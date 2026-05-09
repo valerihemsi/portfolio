@@ -5,7 +5,7 @@ const sections = [
     href: "/projects",
     label: "Projects",
     num: "01",
-    desc: "Code I've built — tools, systems, experiments.",
+    desc: "Code I've built, tools, systems, experiments.",
   },
   {
     href: "/drawings",
@@ -47,8 +47,8 @@ export default function Home() {
         </p>
 
         <h1 className="text-5xl sm:text-7xl font-light leading-[1.05] tracking-tight mb-10">
-          Designer,<br />
-          Developer,<br />
+          Designer, <br />
+          Developer, <br />
           <span className="text-[var(--muted)]">and maker.</span>
         </h1>
 
@@ -111,14 +111,14 @@ export default function Home() {
                     <span className="font-mono text-xs text-[var(--muted)] shrink-0 sm:w-24">2021 – 2024</span>
                     <div>
                       <p className="text-sm font-medium">Istituto Marangoni Milano</p>
-                      <p className="text-xs text-[var(--muted)] mt-0.5">Interior Design, Bachelor of Arts — Milan, Italy</p>
+                      <p className="text-xs text-[var(--muted)] mt-0.5">Interior Design, Bachelor of Arts, Milan, Italy</p>
                     </div>
                   </div>
                   <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
                     <span className="font-mono text-xs text-[var(--muted)] shrink-0 sm:w-24">Short term</span>
                     <div>
                       <p className="text-sm font-medium">Brandeis University</p>
-                      <p className="text-xs text-[var(--muted)] mt-0.5">Short Term Art Program, Visual Arts — Boston, United States</p>
+                      <p className="text-xs text-[var(--muted)] mt-0.5">Short Term Art Program, Visual Arts, Boston, United States</p>
                     </div>
                   </div>
                   <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">

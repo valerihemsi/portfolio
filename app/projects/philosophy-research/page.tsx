@@ -4,17 +4,17 @@ const agents = [
   {
     num: "01",
     name: "Philosophical Researcher",
-    desc: "Investigates the question through a chosen research framework — from Analytic Philosophy to Genealogy. Surfaces the strongest arguments, counter-arguments, cross-cultural perspectives, and unresolved tensions.",
+    desc: "Investigates the question through a chosen research framework, from Analytic Philosophy to Genealogy. Surfaces the strongest arguments, counter-arguments, cross-cultural perspectives, and unresolved tensions.",
   },
   {
     num: "02",
     name: "Epistemic Critic",
-    desc: "Audits the researcher's report using a chosen critique framework — from Adam Smith's Impartial Spectator to Kuhn's Paradigm Analysis. Identifies framing biases, missing voices, and blind spots.",
+    desc: "Audits the researcher's report using a chosen critique framework, from Adam Smith's Impartial Spectator to Kuhn's Paradigm Analysis. Identifies framing biases, missing voices, and blind spots.",
   },
   {
     num: "03",
     name: "Integral Synthesizer",
-    desc: "Integrates both reports through a chosen synthesis framework — from Wilber's AQAL to Rawls' Reflective Equilibrium. Distinguishes genuine integration from false consensus.",
+    desc: "Integrates both reports through a chosen synthesis framework, from Wilber's AQAL to Rawls' Reflective Equilibrium. Distinguishes genuine integration from false consensus.",
   },
 ];
 
@@ -69,7 +69,7 @@ export default function PhilosophyResearchPage() {
         </h1>
 
         <p className="text-[var(--muted)] text-lg leading-relaxed max-w-xl">
-          A multi-agent AI platform where three specialized agents collaboratively investigate any philosophical question — each operating through a distinct, user-selected intellectual framework.
+          A multi-agent AI platform where three specialized agents collaboratively investigate any philosophical question, each operating through a distinct, user-selected intellectual framework.
         </p>
       </header>
 
@@ -82,7 +82,7 @@ export default function PhilosophyResearchPage() {
         </h2>
 
         <p className="text-[var(--muted)] text-sm leading-relaxed mb-10">
-          The user types any philosophical question and selects one framework per agent from a catalog of 15 intellectual methodologies. The three agents then run sequentially — each one receiving the previous agent&apos;s output as context — producing a layered, multi-perspective analysis.
+          The user types any philosophical question and selects one framework per agent from a catalog of 15 intellectual methodologies. The three agents then run sequentially, each one receiving the previous agent&apos;s output as context, producing a layered, multi-perspective analysis.
         </p>
 
         <div className="flex flex-col gap-6">
@@ -155,13 +155,13 @@ export default function PhilosophyResearchPage() {
 
         <div className="flex flex-col gap-5 text-sm text-[var(--muted)] leading-relaxed">
           <p>
-            Building this system taught me how to structure multi-agent pipelines where each agent has a distinct role, a specific context window, and a clear handoff to the next. Designing the framework injection system — where philosophical methodologies are encoded as detailed prompt instructions — showed me how much output quality depends on how precisely you define a role.
+            Building this system taught me how to structure multi-agent pipelines where each agent has a distinct role, a specific context window, and a clear handoff to the next. Designing the framework injection system, where philosophical methodologies are encoded as detailed prompt instructions, showed me how much output quality depends on how precisely you define a role.
           </p>
           <p>
-            On the frontend side, implementing real-time Server-Sent Events (SSE) streaming and the typewriter effect required thinking carefully about state — what's happening in the browser while the server is still generating. It was the first time I experienced the full loop from a user interface decision all the way down to how a Python thread queues messages.
+            On the frontend side, implementing real-time Server-Sent Events (SSE) streaming and the typewriter effect required thinking carefully about state, what's happening in the browser while the server is still generating. It was the first time I experienced the full loop from a user interface decision all the way down to how a Python thread queues messages.
           </p>
           <p>
-            Most importantly, this project confirmed my core belief: AI is most powerful not when it replaces thinking, but when it structures it — giving different frameworks equal weight, holding contradictions open, and refusing easy synthesis.
+            Most importantly, this project confirmed my core belief: AI is most powerful not when it replaces thinking, but when it structures it, giving different frameworks equal weight, holding contradictions open, and refusing easy synthesis.
           </p>
         </div>
       </section>

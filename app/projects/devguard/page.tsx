@@ -4,7 +4,7 @@ const agents = [
   {
     num: "01",
     name: "GitHub Scanner Agent",
-    desc: "Scans every repository across the full commit history — searching for leaked API keys, passwords, database URLs, and sensitive tokens using pattern recognition. Skips library and dependency files to eliminate false positives.",
+    desc: "Scans every repository across the full commit history, searching for leaked API keys, passwords, database URLs, and sensitive tokens using pattern recognition. Skips library and dependency files to eliminate false positives.",
   },
   {
     num: "02",
@@ -28,14 +28,14 @@ const stack = [
 ];
 
 const features = [
-  "Full commit history scanning — not just recent activity",
-  "Smart state memory — remembers where it left off, only scans new commits",
+  "Full commit history scanning, not just recent activity",
+  "Smart state memory, remembers where it left off, only scans new commits",
   "Pattern detection for 10+ secret types: API keys, JWTs, private keys, DB URLs",
   "Library file exclusion to eliminate false positives",
   "Collaborator and deploy key monitoring",
   "Email alerts with structured security report",
-  "Continuous watch mode — runs automatically every N hours",
-  "Extensible — Vercel and Railway monitoring ready to connect",
+  "Continuous watch mode, runs automatically every N hours",
+  "Extensible, Vercel and Railway monitoring ready to connect",
 ];
 
 export default function DevGuardPage() {
@@ -82,7 +82,7 @@ export default function DevGuardPage() {
         </p>
         <div className="flex flex-col gap-5 text-[var(--muted)] leading-[1.85]">
           <p>
-            I came to software development from a different direction — design, philosophy, creative research.
+            I came to software development from a different direction, design, philosophy, creative research.
             I started building real projects early, moving fast with AI tools, learning as I went.
             But moving fast means making mistakes. And some mistakes in development aren't just bugs —
             they're security vulnerabilities you don't even know exist.
@@ -90,30 +90,30 @@ export default function DevGuardPage() {
           <p>
             I didn't always know what I was exposing. A <code className="font-mono text-xs bg-white/5 px-1.5 py-0.5 rounded">.env</code> file
             accidentally committed. An API key left in a repository's history. A token that should never have
-            been pushed. I wasn't being careless — I simply didn't have the experience yet to know where the
+            been pushed. I wasn't being careless, I simply didn't have the experience yet to know where the
             edges were. And I had no system to tell me when I crossed them.
           </p>
           <p>
             That's when the idea came to me: instead of trying to remember every rule myself,
             what if I built something that watched for me? A multi-agent system where each agent
-            is responsible for one part of the problem — scanning commits, monitoring account activity,
+            is responsible for one part of the problem, scanning commits, monitoring account activity,
             sending alerts. Something that runs in the background and catches what I miss.
           </p>
           <p>
-            I built it through trial and error. The first version was slow — scanning every commit
+            I built it through trial and error. The first version was slow, scanning every commit
             in every repository from scratch, taking over twenty minutes per run. I added state memory
             so it only looks at new commits. I tuned the pattern detection to stop flagging library files
             as threats. I connected email alerts so the report reaches me directly, not buried in a terminal.
           </p>
           <p>
             During its first real scan, DevGuard found an actual Anthropic API key that had been sitting
-            in a repository's commit history for months — exposed, publicly accessible. The key had already
+            in a repository's commit history for months, exposed, publicly accessible. The key had already
             been rotated, but the vulnerability had been real. The system caught what I had completely missed.
           </p>
           <p>
             It now runs as a local CLI tool, scanning my GitHub repositories every 24 hours and
             sending a structured security report by email. The goal going forward is to make this
-            accessible to other developers who are in the same position I was — building fast with AI,
+            accessible to other developers who are in the same position I was, building fast with AI,
             learning in public, and needing a safety net that doesn't require deep security expertise to use.
           </p>
         </div>
@@ -174,7 +174,7 @@ export default function DevGuardPage() {
         </p>
         <p className="text-[var(--muted)] text-sm leading-relaxed max-w-xl">
           Currently running as a local CLI tool. Next steps include a web dashboard,
-          Vercel and Railway integration, and multi-user support — so any developer
+          Vercel and Railway integration, and multi-user support, so any developer
           can connect their accounts and get the same safety net without writing a line of code.
         </p>
       </section>

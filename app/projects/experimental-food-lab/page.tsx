@@ -4,7 +4,7 @@ const features = [
   {
     num: "01",
     name: "Experiment Cards",
-    desc: "Every post is a food experiment,not just a recipe. Users document what they tested, what happened, and whether it worked. Failed experiments are as welcome as successful ones. A 'Failed but interesting' tag carries the same weight as 'Unexpected but good.'",
+    desc: "Every post is a food experiment, not just a recipe. Users document what they tested, what happened, and whether it worked. Failed experiments are as welcome as successful ones. A 'Failed but interesting' tag carries the same weight as 'Unexpected but good.'",
   },
   {
     num: "02",
@@ -14,32 +14,32 @@ const features = [
   {
     num: "03",
     name: "Social Feed & Follow System",
-    desc: "A feed with three modes: All experiments, Following (people you follow), and For You (randomized discovery). Full follow system with follower and following counts on every profile,with dedicated followers and following list pages.",
+    desc: "A feed with three modes: All experiments, Following (people you follow), and For You (randomized discovery). Full follow system with follower and following counts on every profile, with dedicated followers and following list pages.",
   },
   {
     num: "04",
     name: "Would Cook Again?",
-    desc: "Instead of likes, every experiment gets a binary vote: Would cook again / Skip. Pressing 'Would Cook Again' automatically saves the recipe to your profile collection,so voting and collecting are the same gesture.",
+    desc: "Instead of likes, every experiment gets a binary vote: Would cook again / Skip. Pressing 'Would Cook Again' automatically saves the recipe to your profile collection, so voting and collecting are the same gesture.",
   },
   {
     num: "05",
     name: "Collections",
-    desc: "Every profile has two collection tabs visible only to the owner: Would Cook Again (recipes you've voted on) and Saved (recipes you've bookmarked with the heart button). A third tab,Experiments,shows everything you've posted, and is visible to everyone.",
+    desc: "Every profile has two collection tabs visible only to the owner: Would Cook Again (recipes you've voted on) and Saved (recipes you've bookmarked with the heart button). A third tab, Experiments, shows everything you've posted, and is visible to everyone.",
   },
   {
     num: "06",
     name: "User Profiles & Signature Dishes",
-    desc: "Each profile has a food identity, favorite ingredients, cooking style tags, and an experiment level,from Beginner to Taste Scientist. Users can register Signature Dishes,their most iconic, perfected recipes,displayed separately on their profile as a personal culinary identity.",
+    desc: "Each profile has a food identity, favorite ingredients, cooking style tags, and an experiment level, from Beginner to Taste Scientist. Users can register Signature Dishes, their most iconic, perfected recipes, displayed separately on their profile as a personal culinary identity.",
   },
   {
     num: "07",
     name: "Direct Messaging",
-    desc: "Real-time direct messaging between users built with Supabase Realtime,so food creators can connect directly, exchange ideas, collaborate on experiments, or discuss techniques without leaving the platform.",
+    desc: "Real-time direct messaging between users built with Supabase Realtime, so food creators can connect directly, exchange ideas, collaborate on experiments, or discuss techniques without leaving the platform.",
   },
   {
     num: "08",
     name: "Open for Work",
-    desc: "A professional layer built into the platform. Food professionals,chefs, recipe developers, food stylists, consultants,can activate an Open for Work profile with their services, location, headline, and background. Visitors can contact them directly through the messaging system.",
+    desc: "A professional layer built into the platform. Food professionals, chefs, recipe developers, food stylists, consultants, can activate an Open for Work profile with their services, location, headline, and background. Visitors can contact them directly through the messaging system.",
   },
   {
     num: "09",
@@ -91,7 +91,7 @@ export default function ExperimentalFoodLabPage() {
         </h1>
 
         <p className="text-[var(--muted)] text-lg leading-relaxed max-w-xl">
-          A social platform for food experimenters,where unexpected recipes, strange ingredient combinations, creative failures, and accidental discoveries are all worth sharing.
+          A social platform for food experimenters, where unexpected recipes, strange ingredient combinations, creative failures, and accidental discoveries are all worth sharing.
         </p>
       </header>
 
@@ -102,10 +102,10 @@ export default function ExperimentalFoodLabPage() {
         <h2 className="font-mono text-xs tracking-[.2em] uppercase text-[var(--muted)] mb-8">The Idea</h2>
         <div className="flex flex-col gap-5 text-sm text-[var(--muted)] leading-relaxed">
           <p>
-            Most recipe platforms only show successes,polished photos, tested measurements, guaranteed results. But the interesting part of cooking is the experiment: what happens when you add miso to a tahini dressing, or cure salmon with sumac instead of lemon, or make caramel with tamarind.
+            Most recipe platforms only show successes, polished photos, tested measurements, guaranteed results. But the interesting part of cooking is the experiment: what happens when you add miso to a tahini dressing, or cure salmon with sumac instead of lemon, or make caramel with tamarind.
           </p>
           <p>
-            Experimental FoodLab is built around the experiment card format rather than the recipe card. Every post documents a hypothesis, a process, and a result,including the ones that didn&apos;t work. A &quot;Failed but interesting&quot; tag is as valid as &quot;Unexpected but good.&quot;
+            Experimental FoodLab is built around the experiment card format rather than the recipe card. Every post documents a hypothesis, a process, and a result, including the ones that didn&apos;t work. A &quot;Failed but interesting&quot; tag is as valid as &quot;Unexpected but good.&quot;
           </p>
         </div>
       </section>
@@ -152,13 +152,13 @@ export default function ExperimentalFoodLabPage() {
           <p>
             The food industry has a communication problem. Finding the right chef for a private event,
             a recipe developer for a product launch, a food stylist for a shoot, or a consultant
-            for a restaurant concept,these connections still happen through scattered networks,
+            for a restaurant concept, these connections still happen through scattered networks,
             word of mouth, and slow back-and-forth. There is no dedicated space where food professionals
             signal their availability and clients can find and reach them directly.
           </p>
           <p>
             The Open for Work feature is designed to close that gap. A food professional activates their
-            profile with their services, location, and a headline,and becomes immediately discoverable
+            profile with their services, location, and a headline, and becomes immediately discoverable
             within a community that already understands the food world. A client browsing experiments
             can move from seeing someone&apos;s work to contacting them in a single step, through the
             platform&apos;s built-in messaging system.
@@ -166,7 +166,7 @@ export default function ExperimentalFoodLabPage() {
           <p>
             This removes the friction that currently exists between food talent and the people who need them.
             No external portfolios to hunt for, no cold emails into the void. The work speaks first —
-            through experiments, signature dishes, and votes from the community,and the professional
+            through experiments, signature dishes, and votes from the community, and the professional
             connection follows naturally from that context. Communication becomes faster, more informed,
             and grounded in actual creative output rather than resumes alone.
           </p>
@@ -186,16 +186,16 @@ export default function ExperimentalFoodLabPage() {
         <h2 className="font-mono text-xs tracking-[.2em] uppercase text-[var(--muted)] mb-8">What I Built</h2>
         <div className="flex flex-col gap-5 text-sm text-[var(--muted)] leading-relaxed">
           <p>
-            The full social layer,authentication, profiles, follow system, votes, saves,runs on Supabase with Row Level Security policies. Every user can only modify their own data. Images go to Supabase Storage with public read access.
+            The full social layer, authentication, profiles, follow system, votes, saves, runs on Supabase with Row Level Security policies. Every user can only modify their own data. Images go to Supabase Storage with public read access.
           </p>
           <p>
-            The vote system uses a binary signal,Would Cook Again / Skip,instead of a like count. Pressing &quot;Would Cook Again&quot; both records the vote and automatically saves the recipe to the user&apos;s profile. The heart button saves independently. These two paths converge in the profile&apos;s collection tabs.
+            The vote system uses a binary signal, Would Cook Again / Skip, instead of a like count. Pressing &quot;Would Cook Again&quot; both records the vote and automatically saves the recipe to the user&apos;s profile. The heart button saves independently. These two paths converge in the profile&apos;s collection tabs.
           </p>
           <p>
             Profile collection tabs follow a deliberate privacy model: the Would Cook Again and Saved tabs are only visible to the profile owner; the Experiments tab is public. Votes are stored in a separate table with public read access so aggregate counts are visible to everyone, but what you&apos;ve personally saved remains private.
           </p>
           <p>
-            The search system queries across experiment text fields and also searches ingredient arrays directly,so finding every experiment that uses tahini is a single Supabase <code className="font-mono text-xs bg-[var(--border)] px-1 py-0.5 rounded">.contains()</code> call on the ingredients column.
+            The search system queries across experiment text fields and also searches ingredient arrays directly, so finding every experiment that uses tahini is a single Supabase <code className="font-mono text-xs bg-[var(--border)] px-1 py-0.5 rounded">.contains()</code> call on the ingredients column.
           </p>
           <p>
             The &quot;For You&quot; tab shuffles experiments server-side on every request, giving a genuine discovery experience without a recommendation algorithm. Simple, but it works.
