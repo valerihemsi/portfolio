@@ -13,8 +13,8 @@ const features = [
   },
   {
     num: "03",
-    name: "Social Feed",
-    desc: "A feed with three modes: All experiments, Following (people you follow), and For You (randomized discovery). Full follow system with follower and following counts on every profile.",
+    name: "Social Feed & Follow System",
+    desc: "A feed with three modes: All experiments, Following (people you follow), and For You (randomized discovery). Full follow system with follower and following counts on every profile — with dedicated followers and following list pages.",
   },
   {
     num: "04",
@@ -28,11 +28,21 @@ const features = [
   },
   {
     num: "06",
-    name: "User Profiles",
-    desc: "Each profile has a food identity, favorite ingredients, cooking style tags, and an experiment level — from Beginner to Taste Scientist. Profiles are publicly viewable; collections are private.",
+    name: "User Profiles & Signature Dishes",
+    desc: "Each profile has a food identity, favorite ingredients, cooking style tags, and an experiment level — from Beginner to Taste Scientist. Users can register Signature Dishes — their most iconic, perfected recipes — displayed separately on their profile as a personal culinary identity.",
   },
   {
     num: "07",
+    name: "Direct Messaging",
+    desc: "Real-time direct messaging between users built with Supabase Realtime — so food creators can connect directly, exchange ideas, collaborate on experiments, or discuss techniques without leaving the platform.",
+  },
+  {
+    num: "08",
+    name: "Open for Work",
+    desc: "A professional layer built into the platform. Food professionals — chefs, recipe developers, food stylists, consultants — can activate an Open for Work profile with their services, location, headline, and background. Visitors can contact them directly through the messaging system.",
+  },
+  {
+    num: "09",
     name: "Search",
     desc: "Full-text search across experiment titles, ideas, and results. Ingredient search: searching 'tahini' returns every experiment that used tahini. People search by username or food identity.",
   },
@@ -130,6 +140,42 @@ export default function ExperimentalFoodLabPage() {
               <span className="text-sm">{s.value}</span>
             </div>
           ))}
+        </div>
+      </section>
+
+      <hr className="border-[var(--border)] mb-16" />
+
+      {/* Open for Work potential */}
+      <section className="mb-16">
+        <h2 className="font-mono text-xs tracking-[.2em] uppercase text-[var(--muted)] mb-8">The Open for Work Vision</h2>
+        <div className="flex flex-col gap-5 text-sm text-[var(--muted)] leading-relaxed">
+          <p>
+            The food industry has a communication problem. Finding the right chef for a private event,
+            a recipe developer for a product launch, a food stylist for a shoot, or a consultant
+            for a restaurant concept — these connections still happen through scattered networks,
+            word of mouth, and slow back-and-forth. There is no dedicated space where food professionals
+            signal their availability and clients can find and reach them directly.
+          </p>
+          <p>
+            The Open for Work feature is designed to close that gap. A food professional activates their
+            profile with their services, location, and a headline — and becomes immediately discoverable
+            within a community that already understands the food world. A client browsing experiments
+            can move from seeing someone&apos;s work to contacting them in a single step, through the
+            platform&apos;s built-in messaging system.
+          </p>
+          <p>
+            This removes the friction that currently exists between food talent and the people who need them.
+            No external portfolios to hunt for, no cold emails into the void. The work speaks first —
+            through experiments, signature dishes, and votes from the community — and the professional
+            connection follows naturally from that context. Communication becomes faster, more informed,
+            and grounded in actual creative output rather than resumes alone.
+          </p>
+          <p>
+            The longer-term potential of this layer goes further: a food sector where professionals
+            can build a visible body of work, attract the right clients, and manage their availability —
+            all within the same platform where they already share and discover. A professional network
+            that grows out of a creative community, not the other way around.
+          </p>
         </div>
       </section>
 
