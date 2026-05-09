@@ -82,16 +82,39 @@ export default function DevGuardPage() {
         </p>
         <div className="flex flex-col gap-5 text-[var(--muted)] leading-[1.85]">
           <p>
-            When you're building projects quickly — often with AI assistance — it's easy to accidentally
-            commit a secret key, push a <code className="font-mono text-xs bg-white/5 px-1.5 py-0.5 rounded">.env</code> file,
-            or expose credentials in a repository you thought was private. Most developers don't find out
-            until something breaks or someone else finds it first.
+            I came to software development from a different direction — design, philosophy, creative research.
+            I started building real projects early, moving fast with AI tools, learning as I went.
+            But moving fast means making mistakes. And some mistakes in development aren't just bugs —
+            they're security vulnerabilities you don't even know exist.
           </p>
           <p>
-            DevGuard was built to solve this. During development, it detected a real Anthropic API key
-            that had been committed months earlier in a repository's history — and issued an immediate alert.
-            The key was already inactive, but the vulnerability was real. The system caught what a manual
-            review would have missed.
+            I didn't always know what I was exposing. A <code className="font-mono text-xs bg-white/5 px-1.5 py-0.5 rounded">.env</code> file
+            accidentally committed. An API key left in a repository's history. A token that should never have
+            been pushed. I wasn't being careless — I simply didn't have the experience yet to know where the
+            edges were. And I had no system to tell me when I crossed them.
+          </p>
+          <p>
+            That's when the idea came to me: instead of trying to remember every rule myself,
+            what if I built something that watched for me? A multi-agent system where each agent
+            is responsible for one part of the problem — scanning commits, monitoring account activity,
+            sending alerts. Something that runs in the background and catches what I miss.
+          </p>
+          <p>
+            I built it through trial and error. The first version was slow — scanning every commit
+            in every repository from scratch, taking over twenty minutes per run. I added state memory
+            so it only looks at new commits. I tuned the pattern detection to stop flagging library files
+            as threats. I connected email alerts so the report reaches me directly, not buried in a terminal.
+          </p>
+          <p>
+            During its first real scan, DevGuard found an actual Anthropic API key that had been sitting
+            in a repository's commit history for months — exposed, publicly accessible. The key had already
+            been rotated, but the vulnerability had been real. The system caught what I had completely missed.
+          </p>
+          <p>
+            It now runs as a local CLI tool, scanning my GitHub repositories every 24 hours and
+            sending a structured security report by email. The goal going forward is to make this
+            accessible to other developers who are in the same position I was — building fast with AI,
+            learning in public, and needing a safety net that doesn't require deep security expertise to use.
           </p>
         </div>
       </section>
