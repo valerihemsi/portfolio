@@ -90,6 +90,16 @@ export const projects: Project[] = [
     hasDetail: true,
   },
   {
+    slug: "devguard",
+    title: "DevGuard",
+    description:
+      "A multi-agent security monitoring system built with crewAI — designed for developers who build with AI tools and need a safety net. DevGuard scans GitHub repositories for leaked API keys, passwords, and sensitive credentials across the full commit history, monitors account activity for unauthorized access, and sends real-time email alerts when something suspicious is detected. Built for early-stage developers who move fast and need a system that watches their back.",
+    tags: ["Python", "crewAI", "Claude API", "GitHub API", "Security", "Multi-Agent"],
+    year: 2025,
+    hasDetail: true,
+    github: "https://github.com/valerihemsi/devguard",
+  },
+  {
     slug: "interior-design",
     title: "Interior Design Projects",
     description:
