@@ -102,19 +102,16 @@ export default function ExperimentalFoodLabPage() {
         <h2 className="font-mono text-xs tracking-[.2em] uppercase text-[var(--muted)] mb-8">The Idea</h2>
         <div className="flex flex-col gap-5 text-sm text-[var(--muted)] leading-relaxed">
           <p>
-            Most recipe platforms are built around the finished dish: polished photos, tested measurements, guaranteed results. They are archives of perfection. But cooking, for most people, is something else entirely. It is personal, iterative, and shaped by individual taste, curiosity, and culture. That side of food has never had a real home online.
+            Most recipe platforms are organized around the finished dish. Experimental FoodLab is organized around the person making it. The format is built on experiment cards rather than recipe cards, each one documenting a process and a result, including the ones that did not work.
           </p>
           <p>
-            Experimental FoodLab is built for the people who cook with intention and want to share that process, not just the outcome. The home cook who makes a healthier version of a classic. The person quietly perfecting a vegan take on a traditional dish. The amateur chef who has developed a dish so distinctly their own that it deserves a name and a place to live. The food enthusiast who shares experiments on social media and wants a platform that actually understands what they are doing.
+            The platform is designed for people who cook with a point of view: someone making a healthier version of a dish they grew up with, a person who has spent months perfecting a vegan take on something traditionally not vegan, an amateur chef whose food has drifted far enough from any existing recipe that it has genuinely become their own. The Signature Dish feature exists for that last case specifically. A user can name a dish, publish it under that name, and have it live permanently on their profile, distinct from their experiments. It is a way of claiming authorship over food you actually created.
           </p>
           <p>
-            At the center of the platform is the Signature Dish feature. Users can register their most developed, most personal recipes as Signature Dishes, give them a name of their own choosing, and publish them as a permanent part of their profile. It is the closest thing food has to a personal patent, a way of saying: this is mine, I made it, and it has my name on it.
+            The social layer is built around food identity rather than follower counts. Profiles include cooking styles, favorite ingredients, and a food identity field, so the people you find and follow tend to share a genuine overlap with how you think about food. Direct messaging and the follow system let those connections develop naturally, and the Open for Work feature gives food professionals a way to make their availability visible to anyone who encounters their work on the platform.
           </p>
           <p>
-            What separates Experimental FoodLab from existing platforms is the connection layer built beneath the content. Instagram shows food but does not connect food people. Recipe apps collect dishes but do not build communities. Here, sharing an experiment is also a way of finding like-minded people, following someone whose approach resonates, and, through the Open for Work system, turning that visibility into real professional opportunity. A chef, a recipe developer, a food stylist, or anyone building something in the food space can display their work, attract the right audience, and be contacted directly, all within the same platform where their creative identity already lives.
-          </p>
-          <p>
-            The experiment card format, rather than the recipe card, makes all of this possible. Every post documents a process and a result, including the ones that did not work. A &quot;Failed but interesting&quot; tag carries the same weight as &quot;Unexpected but good.&quot; Because the interesting part of food is rarely the perfected version. It is everything that happened before it.
+            The gap this fills is not between recipe apps. It is between the creative food community that already exists on social media and a space that is actually structured around how that community works.
           </p>
         </div>
       </section>
