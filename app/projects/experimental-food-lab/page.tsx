@@ -102,10 +102,19 @@ export default function ExperimentalFoodLabPage() {
         <h2 className="font-mono text-xs tracking-[.2em] uppercase text-[var(--muted)] mb-8">The Idea</h2>
         <div className="flex flex-col gap-5 text-sm text-[var(--muted)] leading-relaxed">
           <p>
-            Most recipe platforms only show successes, polished photos, tested measurements, guaranteed results. But the interesting part of cooking is the experiment: what happens when you add miso to a tahini dressing, or cure salmon with sumac instead of lemon, or make caramel with tamarind.
+            Most recipe platforms are built around the finished dish: polished photos, tested measurements, guaranteed results. They are archives of perfection. But cooking, for most people, is something else entirely. It is personal, iterative, and shaped by individual taste, curiosity, and culture. That side of food has never had a real home online.
           </p>
           <p>
-            Experimental FoodLab is built around the experiment card format rather than the recipe card. Every post documents a hypothesis, a process, and a result, including the ones that didn&apos;t work. A &quot;Failed but interesting&quot; tag is as valid as &quot;Unexpected but good.&quot;
+            Experimental FoodLab is built for the people who cook with intention and want to share that process, not just the outcome. The home cook who makes a healthier version of a classic. The person quietly perfecting a vegan take on a traditional dish. The amateur chef who has developed a dish so distinctly their own that it deserves a name and a place to live. The food enthusiast who shares experiments on social media and wants a platform that actually understands what they are doing.
+          </p>
+          <p>
+            At the center of the platform is the Signature Dish feature. Users can register their most developed, most personal recipes as Signature Dishes, give them a name of their own choosing, and publish them as a permanent part of their profile. It is the closest thing food has to a personal patent, a way of saying: this is mine, I made it, and it has my name on it.
+          </p>
+          <p>
+            What separates Experimental FoodLab from existing platforms is the connection layer built beneath the content. Instagram shows food but does not connect food people. Recipe apps collect dishes but do not build communities. Here, sharing an experiment is also a way of finding like-minded people, following someone whose approach resonates, and, through the Open for Work system, turning that visibility into real professional opportunity. A chef, a recipe developer, a food stylist, or anyone building something in the food space can display their work, attract the right audience, and be contacted directly, all within the same platform where their creative identity already lives.
+          </p>
+          <p>
+            The experiment card format, rather than the recipe card, makes all of this possible. Every post documents a process and a result, including the ones that did not work. A &quot;Failed but interesting&quot; tag carries the same weight as &quot;Unexpected but good.&quot; Because the interesting part of food is rarely the perfected version. It is everything that happened before it.
           </p>
         </div>
       </section>
