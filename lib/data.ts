@@ -107,7 +107,7 @@ export const projects: Project[] = [
     tags: ["Concept Design", "OLED Technology", "Interior Architecture", "Product Design", "Wellbeing"],
     year: 2025,
     hasDetail: true,
-    link: "https://nature-window.vercel.app",
+    link: "https://nature-window-git-main-valerihemsi-3642s-projects.vercel.app",
   },
   {
     slug: "interior-design",
