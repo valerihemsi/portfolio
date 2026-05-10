@@ -42,14 +42,13 @@ export type Post = {
 
 export const projects: Project[] = [
   {
-    slug: "philosophy-research",
-    title: "Philosophical Research System",
+    slug: "websites",
+    title: "Websites I've Built",
     description:
-      "A multi-agent AI system where three crewAI agents collaboratively research philosophical questions using selectable frameworks, Analytic, Phenomenology, AQAL and more.",
-    tags: ["Python", "crewAI", "Flask", "Claude API", "SSE"],
+      "A collection of websites and web applications designed and developed from scratch, combining visual thinking with code.",
+    tags: ["Next.js", "TypeScript", "React", "Tailwind", "HTML/CSS"],
     year: 2025,
     hasDetail: true,
-    link: "https://philosophy-research-kxlv-production.up.railway.app",
   },
   {
     slug: "targetmind-ai",
@@ -62,15 +61,6 @@ export const projects: Project[] = [
     link: "https://targetmind-ai-production.up.railway.app",
   },
   {
-    slug: "websites",
-    title: "Websites I've Built",
-    description:
-      "A collection of websites and web applications designed and developed from scratch, combining visual thinking with code.",
-    tags: ["Next.js", "TypeScript", "React", "Tailwind", "HTML/CSS"],
-    year: 2025,
-    hasDetail: true,
-  },
-  {
     slug: "experimental-food-lab",
     title: "Experimental FoodLab",
     description:
@@ -79,6 +69,16 @@ export const projects: Project[] = [
     year: 2025,
     hasDetail: true,
     link: "https://experimental-food-lab.vercel.app",
+  },
+  {
+    slug: "philosophy-research",
+    title: "Philosophical Research System",
+    description:
+      "A multi-agent AI system where three crewAI agents collaboratively research philosophical questions using selectable frameworks, Analytic, Phenomenology, AQAL and more.",
+    tags: ["Python", "crewAI", "Flask", "Claude API", "SSE"],
+    year: 2025,
+    hasDetail: true,
+    link: "https://philosophy-research-kxlv-production.up.railway.app",
   },
   {
     slug: "val-nspe-lm",
