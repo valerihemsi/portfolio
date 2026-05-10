@@ -100,6 +100,16 @@ export const projects: Project[] = [
     github: "https://github.com/valerihemsi/devguard",
   },
   {
+    slug: "nature-window",
+    title: "Natura Vue",
+    description:
+      "A product concept developed during my interior architecture thesis. Natura Vue is a transparent OLED-based window system that transforms urban views into personalized nature experiences, designed for hospitals, apartments, wellness clinics, and spaces where access to nature is limited.",
+    tags: ["Concept Design", "OLED Technology", "Interior Architecture", "Product Design", "Wellbeing"],
+    year: 2025,
+    hasDetail: true,
+    link: "https://nature-window-kohl.vercel.app",
+  },
+  {
     slug: "interior-design",
     title: "Interior Design Projects",
     description:
