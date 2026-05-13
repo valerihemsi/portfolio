@@ -54,8 +54,8 @@ export const projects: Project[] = [
     slug: "targetmind-ai",
     title: "TargetMind AI",
     description:
-      "A bias-aware data optimization system where seven self-aware agents analyze a customer dataset, evaluate their own bias contributions, critique each other's decisions, apply corrections, and produce two separate reports, a process audit and an optimal target audience list.",
-    tags: ["Python", "pandas", "Flask", "SSE", "Bias Detection", "Self-Aware Agents"],
+      "An assumption-surfacing customer targeting pipeline. Seven agents — optionally LLM-driven — analyze the dataset, expose the assumption behind every decision they make, counterfactually re-run each decision under an alternative method, and produce per-row provenance plus a transparency report that separates real data signal from methodology artifact.",
+    tags: ["Python", "pandas", "Flask", "crewAI", "Claude API", "Counterfactual", "Self-Aware Agents"],
     year: 2025,
     hasDetail: true,
     link: "https://targetmind-ai-production.up.railway.app",

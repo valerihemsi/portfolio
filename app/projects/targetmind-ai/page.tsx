@@ -4,63 +4,67 @@ const agents = [
   {
     num: "01",
     name: "Data Cleaning",
-    self: "Self-evaluates bias contribution",
-    desc: "Removes duplicates, fixes negatives, applies IQR outlier detection, fills missing values with median/mode. After cleaning, measures how much each decision shifted the demographic distribution, and assigns itself a bias contribution score between 0 and 1.",
+    self: "Surfaces its own filling assumption",
+    desc: "Removes duplicates, fixes negatives, applies IQR outlier detection, fills missing values with median/mode. Then names the assumption underneath that choice — \"missing values look like the typical user\" — and reports how much demographic shift this method introduced. This is not a bias error to fix; it is a methodological fragility to be transparent about.",
   },
   {
     num: "02",
     name: "Segmentation",
-    self: "Self-evaluates representation imbalance",
-    desc: "Analyzes the distribution of each demographic group and every metric column. Calculates how overrepresented or underrepresented each segment is, and flags its own bias contribution if the representation gap exceeds a threshold.",
+    self: "Names what is real signal vs. artifact",
+    desc: "Reports segment and demographic distributions exactly as the data shows them. Representation gaps are surfaced — but never silently flattened. The agent makes its own assumption explicit: the raw data is treated as a faithful sample, with the caveat that any sampling bias upstream will travel downstream.",
   },
   {
     num: "03",
     name: "Initial Scoring",
-    self: "Self-evaluates score gaps between groups",
-    desc: "Assigns each record a potential score (0–100) using normalized metrics and equal weights. Then measures the score gap between every demographic group, and identifies which metric is most responsible for that gap. Produces its own bias contribution score.",
+    self: "Exposes its weight-choice assumption",
+    desc: "Assigns each record a 0-100 score using normalized metrics and a chosen weight scheme. Each row also gets a `dominant_metrik` and a human-readable `secim_gerekce` (e.g. \"High spend Q92 · Medium gaming hours Q67\"), so every score is auditable at the row level. The agent declares its weight choice as an assumption — not a fact — and predicts how alternative weights might shift outcomes.",
   },
   {
     num: "04",
     name: "Proxy & Bias Detection",
-    self: "Self-evaluates overlooked relationships",
-    desc: "Uses Cramér's V to detect which variables correlate with protected attributes (income, gender, age), flagging them as high-risk proxies. Simultaneously measures demographic score gaps in the high-scoring segment. Asks: which relationships did I miss?",
+    self: "Reveals indirect demographic paths",
+    desc: "Uses Cramér's V to find which seemingly neutral metrics (device type, platform, city) correlate strongly with protected attributes (gender, income, age). These relationships are not deleted — they are exposed so downstream agents can ask \"how much of my output is actually a hidden proxy for demographics?\"",
   },
   {
     num: "05",
     name: "Cross-Agent Critique",
-    self: "Validates all agents' self-reports",
-    desc: "Reads the full pipeline log, every agent's self-assessment. Validates or challenges each report. Identifies contradictions, under-reported bias, and overlooked patterns. Proposes specific corrections: new weights, alternative fill strategies, flags to carry forward.",
+    self: "Quantifies decision fragility",
+    desc: "Reads the full pipeline log, ranks each agent's `varsayım hassasiyeti` (assumption sensitivity), and identifies the most fragile decision. It does not propose corrections to flatten output — it proposes alternative tests. Pairs with a counterfactual tool that re-runs the scoring under four weight scenarios (current / equal / spend-heavy / spend-light) and reports which decisions survive across scenarios (= real signal) and which collapse (= methodology-dependent).",
   },
   {
     num: "06",
-    name: "Corrected Scoring",
-    self: "Measures before/after bias reduction",
-    desc: "Applies the corrections proposed by the Critique agent, new metric weights, adjusted thresholds. Re-scores the full dataset and computes the demographic score gap before and after. Reports the exact improvement in points for each demographic dimension.",
+    name: "Iterative Robustness Test",
+    self: "Finds the assumption-independent fixed point",
+    desc: "Re-runs critique + alternative scoring in a loop. Stops not at \"bias < threshold\" but at convergence: when the round-to-round change in outcomes is small enough that the decision has become insensitive to the method itself. If convergence is not reached, that's a finding, not a failure — the agent transparently reports that both methods' outputs should be carried into the final report.",
   },
   {
     num: "07",
-    name: "Final Optimization & Reports",
-    self: "Produces two separate outputs",
-    desc: "Builds the optimal customer pool from bias-corrected scores. Then generates two independent reports: a Process Report showing each agent's self-evaluation, critique, and corrections across the full pipeline; and an Optimal Pool Report showing the final audience with demographic distribution and score breakdown.",
+    name: "Final Transparency Report",
+    self: "Pairs each insight with its fragility note",
+    desc: "Builds the optimal customer pool and writes two outputs: (1) the audience itself, with every row's per-metric provenance; (2) a transparency report that ranks agents by assumption sensitivity, highlights the most method-sensitive demographic dimension, and quantifies the \"objective gain\" — how much of the top audience survives under both the initial and the alternative method (= robust subset the marketing team can act on with confidence).",
   },
 ];
 
 const stack = [
-  { label: "Language",   value: "Python 3.12" },
-  { label: "Data",       value: "pandas · numpy" },
-  { label: "Server",     value: "Flask + SSE streaming" },
-  { label: "Frontend",   value: "Vanilla HTML / CSS / JS" },
-  { label: "Bias Tools", value: "Cramér's V · demographic parity · self-assessment scoring" },
-  { label: "Pipeline",   value: "7-agent deterministic (no LLM)" },
-  { label: "Reports",    value: "Process Report + Optimal Pool Report (HTML)" },
+  { label: "Language",      value: "Python 3.12" },
+  { label: "Data",          value: "pandas · numpy" },
+  { label: "Server",        value: "Flask + SSE streaming" },
+  { label: "Frontend",      value: "Vanilla HTML / CSS / JS, mapping-aware" },
+  { label: "Agents (LLM)",  value: "crewAI + Claude Sonnet 4.6" },
+  { label: "Agents (det.)", value: "Same 7 tools runnable without an LLM" },
+  { label: "Analysis",      value: "Cramér's V · counterfactual scoring · per-row provenance · iterative convergence" },
+  { label: "Chat",          value: "Claude Haiku 4.5 (dataset-aware assistant)" },
+  { label: "Reports",       value: "Process Report + Optimal Pool Report + Transparency Report" },
 ];
 
 const whatChanged = [
-  "Each agent now calculates its own bias contribution score (0–1) and logs it to a shared pipeline log.",
-  "A dedicated Critique agent reads all seven self-reports, validates them, and proposes targeted corrections.",
-  "Corrected Scoring applies those corrections and measures the exact reduction in demographic score gaps.",
-  "The pipeline produces two separate final outputs: a Process Report (how agents evaluated themselves) and an Optimal Pool Report (the target audience itself).",
-  "The system can accept any CSV, not just gaming data. Column roles are mapped at upload time.",
+  "Each agent surfaces the assumption underneath its decision and labels its own metodolojik kırılganlık (methodological fragility), instead of just reporting a bias score.",
+  "A new Counterfactual Test agent re-runs the scoring under four different weight scenarios and identifies which results survive across all of them — the real, method-independent signal.",
+  "An Iterative Robustness Loop replaces the old single-pass correction. It converges when the decision becomes insensitive to method choice, not when output equality is reached.",
+  "Every customer in the output CSV now carries a `dominant_metrik` and a `secim_gerekce` — a one-line explanation of which two metrics drove this row's score, and at what quantile.",
+  "The dashboard shows an Objective Gain panel: how many of the top-30 customers were selected under BOTH the initial weighting and the alternative weighting (= robust subset), and which IDs were method-dependent.",
+  "Two parallel execution paths: a deterministic Flask pipeline for the web demo (no LLM, instant, auditable) and a Claude Sonnet 4.6 crewAI pipeline (LLM agents that reason about each tool's output and write their own provenance commentary).",
+  "Fully generic CSV upload: agents adapt to whatever columns the user maps. The dashboard tables build themselves dynamically from the mapping.",
 ];
 
 export default function TargetMindPage() {
@@ -91,7 +95,7 @@ export default function TargetMindPage() {
           <span className="font-mono text-xs text-[var(--muted)] border border-[var(--border)] px-2 py-1 rounded">
             2025
           </span>
-          <span className="font-mono text-xs text-[var(--muted)]">AI · Data · Bias Detection</span>
+          <span className="font-mono text-xs text-[var(--muted)]">AI · Data · Assumption Surfacing</span>
         </div>
 
         <h1 className="text-4xl sm:text-5xl font-light tracking-tight leading-[1.1] mb-6">
@@ -99,7 +103,7 @@ export default function TargetMindPage() {
         </h1>
 
         <p className="text-[var(--muted)] text-lg leading-relaxed max-w-xl">
-          A bias-aware data optimization system where seven self-aware agents analyze a customer dataset, evaluate their own bias contributions, critique each other, correct themselves, and produce two separate final reports, all without a single LLM call.
+          An assumption-surfacing customer targeting pipeline. Seven agents analyze a dataset, expose the assumption behind every decision they make, counterfactually re-run each decision under an alternative method, and produce a transparency report that separates real data signal from methodology artifact.
         </p>
       </header>
 
@@ -112,10 +116,13 @@ export default function TargetMindPage() {
         </h2>
         <div className="flex flex-col gap-5 text-sm text-[var(--muted)] leading-relaxed">
           <p>
-            Most customer scoring systems favor high spenders, which sounds logical, until you realize that spending capacity is largely determined by income. A system that scores high-income users higher simply because they spend more is not measuring customer value; it is measuring wealth.
+            Most customer scoring systems favor high spenders. Spending capacity is largely determined by income — so a system that ranks high-income users higher because they spend more is not measuring customer value; it is measuring wealth. A scoring decision that looks neutral is, almost always, a methodological tilt in disguise.
           </p>
           <p>
-            TargetMind AI was built to address this: to separate genuine behavioral signals from demographic proxies, and to make every step of that process auditable. But the deeper question it tries to answer is: can a data pipeline be made aware of the bias it introduces at each step, not just after the fact, but while it is happening?
+            The earlier version of this system tried to <em>correct</em> that tilt — to force the scoring output toward demographic parity. That was the wrong instinct. Forcing equality flattens real signals along with artificial ones, and the user is left with a number they can&apos;t trust either way.
+          </p>
+          <p>
+            TargetMind AI was rebuilt to do the opposite: surface the methodological assumption in every step, counterfactually test what would happen if that assumption were swapped, and tell the user — for every customer, for every metric, for every decision — which part of the result is genuine behavior and which part is the analyst&apos;s preference in disguise.
           </p>
         </div>
       </section>
@@ -125,10 +132,10 @@ export default function TargetMindPage() {
       {/* 7-agent pipeline */}
       <section className="mb-16">
         <h2 className="font-mono text-xs tracking-[.2em] uppercase text-[var(--muted)] mb-2">
-          7-Agent Self-Aware Pipeline
+          7-Agent Assumption-Surfacing Pipeline
         </h2>
         <p className="text-[var(--muted)] text-sm leading-relaxed mb-10">
-          Each agent performs its task and then evaluates its own bias contribution. A shared pipeline log accumulates all seven self-assessments. The Critique agent reads the full log and validates, or challenges, what each agent reported about itself.
+          Each agent performs its task, declares the assumption it relied on, and predicts how an alternative method would change the output. The downstream agents read those declarations, run counterfactual tests, and produce the transparency report.
         </p>
 
         <div className="flex flex-col gap-8">
@@ -192,16 +199,16 @@ export default function TargetMindPage() {
         </h2>
         <div className="flex flex-col gap-5 text-sm text-[var(--muted)] leading-relaxed">
           <p>
-            Building the original pipeline taught me that data pipelines are never neutral, every cleaning decision shapes the outcome downstream. Rebuilding it with self-aware agents taught me something more specific: the agents that introduce the most bias are often the ones that feel the most defensible. Mode-filling missing values is a perfectly reasonable decision. It is also the decision that silently amplifies whatever group is already most represented.
+            The biggest shift in this project was a framing one. The earlier version was designed to detect bias and correct it. The current version refuses to correct in that sense — it refuses to flatten real, defensible differences between groups in the name of fairness. Instead, it surfaces the assumption that produced those differences and asks: is this number real, or is this number my method talking?
           </p>
           <p>
-            The cross-agent critique step was the most conceptually interesting. An agent reading another agent&apos;s self-assessment is not just validation, it is a different perspective on the same decisions. The critique sometimes confirmed what the agent reported. More usefully, it sometimes noticed what the agent failed to mention about itself.
+            Per-row provenance turned out to be the single most useful output. Saying &quot;customer C0167 scored 50.9&quot; is opaque. Saying &quot;customer C0167 scored 50.9, driven by high session count (Q97) and high spend (Q95)&quot; converts every row into an auditable claim. The marketing team can argue with a claim. They can&apos;t argue with a number.
           </p>
           <p>
-            Separating the two final reports, one about the pipeline process, one about the target audience, forced me to think about audience. The process report is for someone who wants to understand how the system works and trust it. The pool report is for someone who wants to act on the results. These are different documents for different purposes, and collapsing them into one would have served neither.
+            The Objective Gain comparison — top-30 under method A intersected with top-30 under method B — gave me a metric for trust I didn&apos;t have before. When 100% of the top-30 are selected under both methods, the team can act with confidence. When only 70% overlap, the remaining 30% is a methodology debate, and that debate now has names attached to it: specific customer IDs the analyst has to defend.
           </p>
           <p>
-            I originally built this with crewAI agents. The agents were unreliable, sometimes calling the right tool, sometimes writing free-form text. Replacing the agent layer with direct Python functions taught me the most durable lesson: for deterministic, auditable data work, you do not need an LLM. The self-awareness in this system comes from measurement and logging, not from language generation.
+            Running two parallel paths — deterministic Python tools that the Flask server calls directly, and the same tools wrapped in a crewAI LLM-driven pipeline — taught me that LLMs in this kind of system add narrative, not correctness. The math is the same. The agents&apos; commentary is the difference, and it&apos;s the part a human auditor reads. The deterministic path is the part the system can be trusted on at scale.
           </p>
         </div>
       </section>
