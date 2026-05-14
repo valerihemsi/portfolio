@@ -54,7 +54,7 @@ export default function InteriorDesignPage() {
               Read more →
             </Link>
             <a
-              href="https://nature-window-git-main-valerihemsi-3642s-projects.vercel.app"
+              href="https://www.naturavuewindow.com"
               target="_blank"
               rel="noopener noreferrer"
               className="font-mono text-xs tracking-[.1em] uppercase text-[var(--muted)] hover:text-[var(--foreground)] transition-colors"

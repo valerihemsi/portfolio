@@ -13,7 +13,7 @@ export default function NatureWindowPage() {
           ← Projects
         </Link>
         <a
-          href="https://nature-window-git-main-valerihemsi-3642s-projects.vercel.app"
+          href="https://www.naturavuewindow.com"
           target="_blank"
           rel="noopener noreferrer"
           className="font-mono text-xs tracking-[.1em] uppercase px-4 py-2 border border-[var(--foreground)] text-[var(--foreground)] rounded hover:bg-[var(--foreground)] hover:text-[var(--background)] transition-colors"
@@ -105,7 +105,7 @@ export default function NatureWindowPage() {
           </p>
           <div className="mt-6">
             <a
-              href="https://nature-window-git-main-valerihemsi-3642s-projects.vercel.app"
+              href="https://www.naturavuewindow.com"
               target="_blank"
               rel="noopener noreferrer"
               className="font-mono text-xs tracking-[.1em] uppercase px-4 py-2 border border-[var(--foreground)] text-[var(--foreground)] rounded hover:bg-[var(--foreground)] hover:text-[var(--background)] transition-colors inline-block"
