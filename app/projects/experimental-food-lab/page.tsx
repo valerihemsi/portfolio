@@ -46,6 +46,16 @@ const features = [
     name: "Search",
     desc: "Full-text search across experiment titles, ideas, and results. Ingredient search: searching 'tahini' returns every experiment that used tahini. People search by username or food identity.",
   },
+  {
+    num: "10",
+    name: "AI Image Generation",
+    desc: "Built directly into the experiment composer. Users can generate a photorealistic dish image from their title and description with one tap, enhance an uploaded photo with a natural-language instruction ('brighten the lighting, clean up the background'), or skip the photo entirely and have one auto-generated on publish. Runs on Google's Gemini 2.5 Flash Image model (Nano Banana), invoked through server actions so the API key never ships to the browser.",
+  },
+  {
+    num: "11",
+    name: "Share Anywhere",
+    desc: "Every experiment card and every profile has a share button that uses the native Web Share API on mobile (opening the system share sheet) and falls back to clipboard copy with a one-tap confirmation on desktop. Sign out lives on the profile too, so mobile users without the desktop nav still have a one-tap exit.",
+  },
 ];
 
 const stack = [
@@ -55,6 +65,7 @@ const stack = [
   { label: "Storage",   value: "Supabase Storage (experiment images, avatars)" },
   { label: "Hosting",   value: "Vercel (auto-deploy from GitHub)" },
   { label: "Styling",   value: "Inline styles + CSS custom properties (no framework)" },
+  { label: "AI",        value: "Google Gemini 2.5 Flash Image (Nano Banana) via @google/genai" },
 ];
 
 export default function ExperimentalFoodLabPage() {
@@ -187,12 +198,36 @@ export default function ExperimentalFoodLabPage() {
 
       <hr className="border-[var(--border)] mb-16" />
 
+      {/* Design language */}
+      <section className="mb-16">
+        <h2 className="font-mono text-xs tracking-[.2em] uppercase text-[var(--muted)] mb-8">Design Language</h2>
+        <div className="flex flex-col gap-5 text-sm text-[var(--muted)] leading-relaxed">
+          <p>
+            The interface is treated as a physical cooking journal rather than a feed. Editorial italic Playfair serif for titles, IBM Plex Mono for the small uppercase labels you would find on a magazine masthead, and a warm cream and terracotta palette pulled from the world of food photography rather than from a typical web design system.
+          </p>
+          <p>
+            Each experiment card sits on the page like a clipping pinned in a notebook: washi-tape decorations on the upper corners (the angle and color are derived from the experiment id, so they are stable across re-renders), a four-pixel paper edge, a quiet drop shadow, and an ornamental ✦ divider above the action row. The body uses italic serif for the experimenter&apos;s note and clean sans for the result, the same hierarchy you would see in a recipe book intro.
+          </p>
+          <p>
+            The mono-uppercase labels (<code className="font-mono text-xs bg-[var(--border)] px-1 py-0.5 rounded">EXPERIMENT</code>, <code className="font-mono text-xs bg-[var(--border)] px-1 py-0.5 rounded">RESULT</code>, <code className="font-mono text-xs bg-[var(--border)] px-1 py-0.5 rounded">WOULD COOK AGAIN</code>) carry the structure, while the serif body carries the voice — a deliberate split between editorial chrome and the personal writing that fills it in.
+          </p>
+        </div>
+      </section>
+
+      <hr className="border-[var(--border)] mb-16" />
+
       {/* What I built */}
       <section>
         <h2 className="font-mono text-xs tracking-[.2em] uppercase text-[var(--muted)] mb-8">What I Built</h2>
         <div className="flex flex-col gap-5 text-sm text-[var(--muted)] leading-relaxed">
           <p>
             The full social layer, authentication, profiles, follow system, votes, saves, runs on Supabase with Row Level Security policies. Every user can only modify their own data. Images go to Supabase Storage with public read access.
+          </p>
+          <p>
+            Sign-up uses a Postgres trigger with <code className="font-mono text-xs bg-[var(--border)] px-1 py-0.5 rounded">SECURITY DEFINER</code> to atomically create the profile row when a new <code className="font-mono text-xs bg-[var(--border)] px-1 py-0.5 rounded">auth.users</code> entry is inserted, reading the username and display name from <code className="font-mono text-xs bg-[var(--border)] px-1 py-0.5 rounded">raw_user_meta_data</code>. The trigger sidesteps the RLS deadlock where a brand-new user has no session yet but needs to write into a table that requires <code className="font-mono text-xs bg-[var(--border)] px-1 py-0.5 rounded">auth.uid()</code>. The signup server action also auto-signs the user in immediately after, since Supabase&apos;s newer publishable-key flow returns a user but not always a session.
+          </p>
+          <p>
+            AI image generation runs in a Next.js server action that wraps the Gemini 2.5 Flash Image model. Three entry points share a single pipeline: a manual <em>Generate with AI</em> button, an <em>Enhance with AI</em> flow that takes the uploaded photo as image-to-image input plus a natural-language instruction, and a quiet auto-generate fallback that runs on publish if the user never uploads or generates anything. The API key never leaves the server. Quota and safety errors are translated into single-line human messages instead of leaking the raw JSON.
           </p>
           <p>
             The vote system uses a binary signal, Would Cook Again / Skip, instead of a like count. Pressing &quot;Would Cook Again&quot; both records the vote and automatically saves the recipe to the user&apos;s profile. The heart button saves independently. These two paths converge in the profile&apos;s collection tabs.
