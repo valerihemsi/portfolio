@@ -51,15 +51,14 @@ export const projects: Project[] = [
     hasDetail: true,
   },
   {
-    slug: "yildizname",
-    title: "Yıldızname",
+    slug: "devguard",
+    title: "DevGuard",
     description:
-      "A symbolic-numerology web app rooted in the Ottoman yıldızname and ilm-i hurûf traditions. From a name, mother's name, and birth moment, the app computes ebced (Abjad letter values), life-path numbers, elemental balance, and Chaldean planetary hours, then streams a seven-section interpretive reading from Claude in real time.",
-    tags: ["Next.js 16", "TypeScript", "Claude Sonnet 4.6", "SSE Streaming", "Ebced / Abjad", "Turkish UX"],
-    year: 2026,
+      "A multi-agent security monitoring system built with crewAI, designed for developers who build with AI tools and need a safety net. DevGuard scans GitHub repositories for leaked API keys, passwords, and sensitive credentials across the full commit history, monitors account activity for unauthorized access, and sends real-time email alerts when something suspicious is detected. Built for early-stage developers who move fast and need a system that watches their back.",
+    tags: ["Python", "crewAI", "Claude API", "GitHub API", "Security", "Multi-Agent"],
+    year: 2025,
     hasDetail: true,
-    link: "https://yildizname-murex.vercel.app",
-    github: "https://github.com/valerihemsi/yildizname",
+    github: "https://github.com/valerihemsi/devguard",
   },
   {
     slug: "targetmind-ai",
@@ -101,14 +100,15 @@ export const projects: Project[] = [
     hasDetail: true,
   },
   {
-    slug: "devguard",
-    title: "DevGuard",
+    slug: "yildizname",
+    title: "Yıldızname",
     description:
-      "A multi-agent security monitoring system built with crewAI, designed for developers who build with AI tools and need a safety net. DevGuard scans GitHub repositories for leaked API keys, passwords, and sensitive credentials across the full commit history, monitors account activity for unauthorized access, and sends real-time email alerts when something suspicious is detected. Built for early-stage developers who move fast and need a system that watches their back.",
-    tags: ["Python", "crewAI", "Claude API", "GitHub API", "Security", "Multi-Agent"],
-    year: 2025,
+      "A symbolic-numerology web app rooted in the Ottoman yıldızname and ilm-i hurûf traditions. From a name, mother's name, and birth moment, the app computes ebced (Abjad letter values), life-path numbers, elemental balance, and Chaldean planetary hours, then streams a seven-section interpretive reading from Claude in real time.",
+    tags: ["Next.js 16", "TypeScript", "Claude Sonnet 4.6", "SSE Streaming", "Ebced / Abjad", "Turkish UX"],
+    year: 2026,
     hasDetail: true,
-    github: "https://github.com/valerihemsi/devguard",
+    link: "https://yildizname-murex.vercel.app",
+    github: "https://github.com/valerihemsi/yildizname",
   },
   {
     slug: "nature-window",
