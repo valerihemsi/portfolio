@@ -45,6 +45,34 @@ export default function WebsitesPage() {
           <span className="font-mono text-xs text-[var(--muted)] shrink-0 sm:pt-1">← you are here</span>
         </div>
 
+        {/* Yıldızname */}
+        <div className="group py-8 border-b border-[var(--border)] flex flex-col sm:flex-row sm:items-start gap-6">
+          <span className="font-mono text-xs text-[var(--muted)] pt-1 w-12 shrink-0">2026</span>
+          <div className="flex-1">
+            <h2 className="text-lg font-medium mb-2">Yıldızname</h2>
+            <p className="text-[var(--muted)] text-sm leading-relaxed mb-4">
+              A symbolic-numerology web app rooted in the Ottoman yıldızname tradition. From a name, mother&apos;s name,
+              and birth moment, the app computes ebced letter values, life-path numbers, elemental balance, and Chaldean
+              planetary hours — then streams a seven-section interpretive reading from Claude Sonnet via Server-Sent Events.
+            </p>
+            <div className="flex flex-wrap gap-2 mb-4">
+              {["Next.js 16", "TypeScript", "Claude Sonnet", "SSE Streaming", "Tailwind CSS"].map((t) => (
+                <span key={t} className="font-mono text-[10px] tracking-wider uppercase px-2 py-1 border border-[var(--border)] text-[var(--muted)] rounded">
+                  {t}
+                </span>
+              ))}
+            </div>
+            <a
+              href="https://yildizname-murex.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-xs tracking-[.1em] uppercase text-[var(--foreground)] hover:text-[var(--muted)] transition-colors"
+            >
+              Visit site →
+            </a>
+          </div>
+        </div>
+
         {/* Natura Vue */}
         <div className="group py-8 border-b border-[var(--border)] flex flex-col sm:flex-row sm:items-start gap-6">
           <span className="font-mono text-xs text-[var(--muted)] pt-1 w-12 shrink-0">2025</span>

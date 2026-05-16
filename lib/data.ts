@@ -51,6 +51,17 @@ export const projects: Project[] = [
     hasDetail: true,
   },
   {
+    slug: "yildizname",
+    title: "Yıldızname",
+    description:
+      "A symbolic-numerology web app rooted in the Ottoman yıldızname and ilm-i hurûf traditions. From a name, mother's name, and birth moment, the app computes ebced (Abjad letter values), life-path numbers, elemental balance, and Chaldean planetary hours, then streams a seven-section interpretive reading from Claude in real time.",
+    tags: ["Next.js 16", "TypeScript", "Claude Sonnet 4.6", "SSE Streaming", "Ebced / Abjad", "Turkish UX"],
+    year: 2026,
+    hasDetail: true,
+    link: "https://yildizname-murex.vercel.app",
+    github: "https://github.com/valerihemsi/yildizname",
+  },
+  {
     slug: "targetmind-ai",
     title: "TargetMind AI",
     description:
